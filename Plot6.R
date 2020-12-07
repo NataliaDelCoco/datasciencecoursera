@@ -1,3 +1,7 @@
+# reading files
+NEI <- readRDS("summarySCC_PM25.rds")
+SCC <- readRDS("Source_Classification_Code.rds")
+
 # subset Baltmore City, On-road
 BaltLA_onroad_data <- subset(NEI, fips=="24510" | fips=="06037" & type=="ON-ROAD")
 # sum by year
@@ -10,6 +14,6 @@ ggp <- ggplot(BaltLA_onroad_sum_year, aes(factor(year), x, fill=city )) +
     geom_bar(stat="identity") +
     facet_grid(scales="free", space="free", .~city) +
     labs(x="year", y = "Total motor Vehicles pm2.5 emission (tons)")+
-    labs(title="Total motor Vehicles pm2.5 emission per year in Baltmore City and Los Angeles")
+    labs(title="Total motor Vehicles pm2.5 emission per year in Baltmore City (24510) and Los Angeles (06037)")
 print(ggp)
 dev.off()

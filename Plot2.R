@@ -1,3 +1,8 @@
+# reading files
+NEI <- readRDS("summarySCC_PM25.rds")
+SCC <- readRDS("Source_Classification_Code.rds")
+
+# subset Baltmore city
 Baltdata <- subset(NEI, fips=="24510")
 Baltdata_sum_year<-aggregate(Baltdata$Emissions, by=list(year=Batldata$year), FUN=sum)
 

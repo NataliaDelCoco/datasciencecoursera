@@ -1,3 +1,7 @@
+# reading files
+NEI <- readRDS("summarySCC_PM25.rds")
+SCC <- readRDS("Source_Classification_Code.rds")
+
 # subset Baltmore City, On-road
 Balt_onroad_data <- subset(NEI, fips=="24510" & type=="ON-ROAD")
 

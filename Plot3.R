@@ -1,3 +1,8 @@
+# reading files
+NEI <- readRDS("summarySCC_PM25.rds")
+SCC <- readRDS("Source_Classification_Code.rds")
+
+#subset Batmore city
 Baltdata <- subset(NEI, fips=="24510")
 
 png("Plot3.png",width=550,height=450)

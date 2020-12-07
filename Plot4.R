@@ -1,3 +1,7 @@
+# reading files
+NEI <- readRDS("summarySCC_PM25.rds")
+SCC <- readRDS("Source_Classification_Code.rds")
+
 # coal data
 coal_code <- SCC[grepl("Coal", SCC$Short.Name), ]
 coal_data <- NEI[NEI$SCC %in% coal_code$SCC, ]
